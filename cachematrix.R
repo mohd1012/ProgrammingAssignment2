@@ -17,13 +17,13 @@ makeCacheMatrix <- function(x = matrix()) {
   
   setinverse <- function(new_inverse) inv <<- new_inverse
   getinverse <- function() inv
-  list(set = set, get = get,setinverse = setinverse,getinverse = getmean
+  list(set = set, get = get,setinverse = setinverse,getinverse = getinverse)
 
 }
 
 
 ## Write a short comment describing this function
-
+## this a client function that recieved a list that encapsulates a matrix along with function to store/retrive its inverse
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
@@ -35,7 +35,4 @@ cacheSolve <- function(x, ...) {
     m <- solve(data)
     x$setinverse(m)
     m
-    
-  }
-  
 }
